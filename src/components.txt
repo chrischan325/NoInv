@@ -1,0 +1,31 @@
+format: web application
+desc: send information (about hang-out and more) pings to all participants in friendgroup
+languages: javascript
+frameworks & libraries: react
+
+
+NO-INV COMPONENTS
+-------------------
+
+HEADER
+----------
+- app title, logo?
+- search bar (for many events)
+
+
+ADD BUTTON
+-----------
+- restyle to green, circle with plus
+- make modal form functional, be able to save form data
+- when modal form is submitted when clicked 'add', create card instance of event
+
+
+EVENT BODY
+-----------
+(event card data would mostly be in form of JSON file containing an array of each event)
+
+- make event cards align, and interactive with each other (card is pushed down when added)?
+- make ping button on events functional, notifying corresponding listed participants
+- have a functional delete button, removing event data from JSON file with object array
+
+EXTRA: add like circular profile avatars stacked on each other for each participant in even 
