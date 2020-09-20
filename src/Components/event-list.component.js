@@ -4,22 +4,27 @@ import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
 import axios from 'axios';
-import "./Event.css";
+import "./styles/Event.css";
+import "./styles/Queries.css";
+
+
 
 const Event = props => (
     <div id="card">
-    <Card text={"#0C1B2F"} bg={"light"}  style={{ width: '30rem' }}>
-    <Card.Body className="card-body">
-        <Card.Title>{props.event.eventName}</Card.Title>
-        <Image className="img-responsive imgStyle" width="50" height="50" src={coco} roundedCircle />
-        <Card.Text className="card-text">{ props.event.invited}</Card.Text>
-        <Card.Text className="card-text">{props.event.description}</Card.Text>
-        <Card.Text className="card-text">{props.event.date.substring(0,10 )}</Card.Text>
-        <Button className="btn" variant="primary">Ping</Button>
-    </Card.Body>    
-</Card>
-</div>
+      <Card text={"#0C1B2F"} bg={"light"} className="eventCard">
+        <Card.Body className="card-body">
+            <Card.Title>{props.event.eventName}</Card.Title>
+            <Image className="img-responsive imgStyle" width="50" height="50" src={coco} roundedCircle />
+            <Card.Text className="card-text">{ props.event.invited}</Card.Text>
+            <Card.Text className="card-text">{props.event.description}</Card.Text>
+            <Card.Text className="card-text">{props.event.date.substring(0,10 )}</Card.Text>
+            <Button className="btn" variant="primary" type="button">Ping!</Button>
+        </Card.Body>    
+      </Card>
+    </div>
 )
+
+
 
 export default class eventsList extends Component {
   constructor(props) {
@@ -27,7 +32,10 @@ export default class eventsList extends Component {
 
     this.deleteEvent = this.deleteEvent.bind(this)
 
-    this.state = {events: []};
+    this.state = {
+      events: [],
+      email:''            
+    };
   }
 
   componentDidMount() {
@@ -57,11 +65,16 @@ export default class eventsList extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Logged Events</h3>
-          <tbody>
-            { this.eventList() }
-          </tbody>
+      <div id="mainContainer">
+        <div id="headerText">
+          <h3>Logged Events</h3>
+        </div>
+
+        <div id="events">
+            <tbody>
+              { this.eventList() }
+            </tbody>
+        </div>
       </div>
     )
   }

@@ -1,0 +1,11 @@
+@media (max-width: 575.98px){
+
+    #mainContainer{
+        max-width: 350px;
+        margin: 15px auto;
+    }
+
+    .eventCard {
+        width: 320px;
+    }
+}

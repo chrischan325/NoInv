@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import emailjs from 'emailjs-com';
 
 export default class CreateUser extends Component {
   constructor(props) {
@@ -11,7 +12,8 @@ export default class CreateUser extends Component {
 
     this.state = {
       username: '',
-      email: ''
+      email: '',
+      message: 'hello'
     }
   }
 
@@ -48,6 +50,8 @@ export default class CreateUser extends Component {
 
   }
 
+  
+
   render() {
     return (
       <div>
@@ -60,6 +64,7 @@ export default class CreateUser extends Component {
                 className="form-control"
                 value={this.state.username}
                 onChange={this.onChangeUsername}
+                name='name'
                 />
             <label>Email: </label>
            <input type="email"
@@ -67,10 +72,11 @@ export default class CreateUser extends Component {
                 className="form-control"
                 value={this.state.email}
                 onChange={this.onChangeEmail}
+                name='email '
                 /> 
           </div>
           <div className="form-group">
-            <input type="submit" value="Create User" className="btn btn-primary" />
+            <input type="submit" value="Create User" className="btn" onClick=''/>
           </div>
         </form>
       </div>

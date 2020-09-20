@@ -1,0 +1,64 @@
+.card {
+    box-shadow: 0px 10px 10px #254670;
+    border-radius: 1rem;
+    margin: 0px auto 20px auto;
+}
+
+
+#mainContainer {
+    border-radius: 1em;
+    max-width: 650px;
+    margin: 30px auto;
+    background-color: #366cb3;
+    padding: 15px 15px 0px 15px;
+}
+
+.btn {
+    background-color: #67ce86;
+    border: none;
+    width: auto;
+    height: 30px;   
+    border-radius: 8px;
+    font-family: 'Alata';
+    padding-top: 3px;
+}
+
+.btn:hover{
+    background-color: #ebbe2b;
+}
+
+.btn:active:focus{
+    box-shadow: none;
+    background-color: #cea82c;
+}
+
+
+#headerText{
+    color: white;
+    margin-bottom: 15px;
+}
+
+#headerText h3{
+    font-size: 20px;
+}
+
+.eventCard{
+    width: 620px;
+}
+
+.card-title{
+   display: inline;
+}
+
+.card-text{
+    margin-top: 0.75rem;
+    font-family: 'Alata';
+}
+
+.imgStyle{
+    border: 1px solid gray;
+    float: right;
+}
+
+
+

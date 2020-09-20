@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-
+import emailjs from 'emailjs-com';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import bootstrap from 'bootstrap'
-
-React.Bootstrap = require('react-bootstrap');
-React.Bootstrap.Select = require('react-bootstrap-select');
 
 export default class CreateEvent extends Component {
   constructor(props) {
@@ -23,7 +19,8 @@ export default class CreateEvent extends Component {
       invited: '',
       description: '',
       date: new Date(),
-      users: []
+      users: [],
+      email:''
     }
   }
 
@@ -33,7 +30,7 @@ export default class CreateEvent extends Component {
         if (response.data.length > 0) {
           this.setState({
             users: response.data.map(user => user.username),
-            invited: response.data[0].username
+            invited: response.data[0].username.email,
           })
         }
       })
@@ -83,6 +80,17 @@ export default class CreateEvent extends Component {
       .then(res => console.log(res.data));
 
     window.location = '/';
+  }
+
+  sendEmail(e) {
+    e.preventDefault();
+  
+    emailjs.sendForm('gmail', 'template_2xne4ia', e.target, 'user_Zrx8NBiYji1DI9oyu4Mip')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
   }
 
   render() {
@@ -136,7 +144,7 @@ export default class CreateEvent extends Component {
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Create Event Log" className="btn btn-primary" />
+          <input type="submit" value="Create Event Log" className="btn" />
         </div>
       </form>
     </div>

@@ -22,17 +22,12 @@ class App extends Component{
     return (
       <Router>
       <Navbar />
-      <br/>
       <Route path="/" exact component={EventList} />
       <Route path="/edit/:id" component={EditEvent} />
       <Route path="/create" component={CreateEvent} />
       <Route path="/user" component={CreateUser} />
     </Router>
-         
-          
-          
-     
-     
+
      
     );
   }
